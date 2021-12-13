@@ -10,19 +10,12 @@ export function PwaAddToHomescreen() {
     if (prompt) {
       setVisibleState(true);
     }
-    const installApp1: any = document.querySelector('#installApp');
-    console.log(installApp1);
-    if (installApp1) {
-      installApp1.click();
-    }
   }, [prompt]);
   const hide = () => setVisibleState(false);
 
   if (!isVisible) {
     return <div />;
   }
-
-  // installApp1.click();
 
   return prompt && !isInstalled ? (
     <div className="modal">
