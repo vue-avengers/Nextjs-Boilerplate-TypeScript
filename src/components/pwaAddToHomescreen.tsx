@@ -3,26 +3,35 @@ import { useState, useEffect } from 'react';
 import { useAddToHomescreenPrompt } from '../hooks/useAddToHomescreenPrompt';
 
 export function PwaAddToHomescreen() {
-  const [prompt, promptToInstall] = useAddToHomescreenPrompt();
+  const [prompt, promptToInstall, isInstalled] = useAddToHomescreenPrompt();
   const [isVisible, setVisibleState] = useState(false);
-
-  const hide = () => setVisibleState(false);
 
   useEffect(() => {
     if (prompt) {
       setVisibleState(true);
     }
+    const installApp1: any = document.querySelector('#installApp');
+    console.log(installApp1);
+    if (installApp1) {
+      installApp1.click();
+    }
   }, [prompt]);
+  const hide = () => setVisibleState(false);
 
   if (!isVisible) {
     return <div />;
   }
 
-  return (
-    <div onClick={hide}>
-      <button onClick={hide}>Close</button>
-      Hello! Wanna add to homescreen?
-      <button onClick={promptToInstall}>Add to homescreen</button>
+  // installApp1.click();
+
+  return prompt && !isInstalled ? (
+    <div className="modal">
+      <div className="cookiesContent" onClick={hide}>
+        <button className="close">✖</button>
+        <button className="accept" onClick={promptToInstall}>
+          PWA İnstall App
+        </button>
+      </div>
     </div>
-  );
+  ) : null;
 }
