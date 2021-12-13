@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from 'react';
 
 import { useAddToHomescreenPrompt } from '../hooks/useAddToHomescreenPrompt';
@@ -20,9 +21,8 @@ export function PwaAddToHomescreen() {
   return prompt && !isInstalled ? (
     <div className="modal">
       <div className="cookiesContent" onClick={hide}>
-        <button className="close">✖</button>
         <button className="accept" onClick={promptToInstall}>
-          PWA İnstall App
+          HangiKredi'yi Yükle!
         </button>
       </div>
     </div>
