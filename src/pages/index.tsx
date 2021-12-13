@@ -1,6 +1,7 @@
 import type { GetStaticProps } from 'next';
 import { useI18n, I18nProps } from 'next-rosetta';
 
+import { PwaAddToHomescreen } from '../components/pwaAddToHomescreen';
 import type { MyLocale } from '../i18n';
 import { Meta } from '../layout/Meta';
 import { Main } from '../templates/Main';
@@ -17,6 +18,7 @@ const Index = () => {
         />
       }
     >
+      <PwaAddToHomescreen />
       <a href="https://www.hangikredi.com/">
         <img
           src="https://cdn.hangikredi.com/images/slider/desktop-slider-(2)-desktop.jpg"
