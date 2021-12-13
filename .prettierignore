@@ -1,0 +1,19 @@
+.next
+out
+node_modules
+package.json
+tsconfig.json
+yarn.lock
+public
+
+## extensions
+*.*
+Dockerfile
+!*.css
+!*.graphql
+!*.js
+!*.json
+!*.md
+!*.ts
+!*.tsx
+!*.yml

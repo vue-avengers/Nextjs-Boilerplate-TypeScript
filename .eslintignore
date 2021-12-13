@@ -1,0 +1,13 @@
+**/node_modules/*
+**/out/*
+**/e2e/*
+**/.next/*
+**/__tests__/*
+
+## extensions
+*.*
+Dockerfile
+!*.js
+!*.ts
+!*.tsx
+
