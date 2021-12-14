@@ -16,9 +16,9 @@
  * @type {Cypress.PluginConfig}
  */
 module.exports = on => {
-  on("before:browser:launch", (browser, launchOptions) => {
-    if (browser.name === "chrome" || browser.name === "firefox") {
-      launchOptions.args.push("--window-size=1800,1100");
+  on('before:browser:launch', (browser, launchOptions) => {
+    if (browser.name === 'chrome' || browser.name === 'firefox') {
+      launchOptions.args.push('--window-size=1800,1100');
       return launchOptions;
     }
   });

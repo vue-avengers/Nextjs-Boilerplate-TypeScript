@@ -25,24 +25,24 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 /// <reference types="cypress" />
 
-Cypress.Commands.add("alertExistsWith", message => {
-  cy.get("[data-testid='alert-message']").should("exist").contains(message);
+Cypress.Commands.add('alertExistsWith', message => {
+  cy.get("[data-testid='alert-message']").should('exist').contains(message);
 
   cy.get("[data-testid='alert-message']").click();
 });
 
-Cypress.Commands.add("findElementByNameAttribute", (element, name) =>
+Cypress.Commands.add('findElementByNameAttribute', (element, name) =>
   cy.get(`${element}[name='${name}']`)
 );
 
-Cypress.Commands.add("findByTestId", value =>
+Cypress.Commands.add('findByTestId', value =>
   cy.get(`[data-testid='${value}']`)
 );
 
-Cypress.Commands.add("formHasErrors", errors => {
-  cy.get("[data-testid='errors']").should("have.length", errors);
+Cypress.Commands.add('formHasErrors', errors => {
+  cy.get("[data-testid='errors']").should('have.length', errors);
 });
 
-Cypress.Commands.add("submitForm", () => {
-  cy.get("[data-testid='submit']").should("exist").click();
+Cypress.Commands.add('submitForm', () => {
+  cy.get("[data-testid='submit']").should('exist').click();
 });

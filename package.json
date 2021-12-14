@@ -11,7 +11,7 @@
     "build-prod": "run-s clean build export",
     "clean": "rimraf .next out",
     "lint": "next lint",
-    "lint:fix": "yarn lint --fix",
+    "lint:fix": "yarn lint -- --fix",
     "stylelint": "stylelint ./src/**/*.{css,scss}",
     "stylelint:fix": "stylelint --fix ./src/**/*.{css,scss}",
     "pretty": "prettier --write --config .prettierrc.json {src,e2e,docs}/**/*.{ts,tsx}",

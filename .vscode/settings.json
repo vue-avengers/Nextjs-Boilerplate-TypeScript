@@ -8,9 +8,11 @@
   "search.exclude": {
     "package-lock.json": true
   },
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.codeActionsOnSave": [
+    "source.fixAll.format",
     "source.addMissingImports",
     "source.fixAll.eslint",
     "source.fixAll.stylelint"
