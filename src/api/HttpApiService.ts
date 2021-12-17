@@ -129,22 +129,6 @@ class HttpApiService {
     });
   }
 
-  protected uploadFile(
-    endpoint: string,
-    data: FormData,
-    conf = {}
-  ): AxiosPromise {
-    return this.post(endpoint, data, conf);
-  }
-
-  protected downloadFile(endpoint: string): AxiosPromise {
-    const conf = {
-      responseType: 'blob', // important
-      timeout: 30000,
-    };
-    return this.get(endpoint, conf);
-  }
-
   handleSuccess(response: AxiosResponse) {
     // console.log('handleSuccess' + JSON.stringify(response))
     return response;
