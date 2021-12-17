@@ -26,6 +26,7 @@
     "test:e2e:ui": "cypress open --project ./e2e"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "next": "^12.0.7",
     "next-compose-plugins": "^2.2.1",
     "next-pwa": "^5.4.4",
@@ -45,7 +46,7 @@
     "@types/react": "^17.0.33",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
-    "autoprefixer": "^10.2.6",
+    "autoprefixer": "^10.4.0",
     "cross-env": "^7.0.3",
     "cypress": "^9.1.1",
     "esbuild-loader": "^2.16.0",

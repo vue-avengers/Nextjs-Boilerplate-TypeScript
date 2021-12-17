@@ -1,5 +1,8 @@
 module.exports = {
-  hooks: {
-    'pre-commit': 'lint-staged',
+  husky: {
+    hooks: {
+      'pre-commit': 'lint-staged',
+      'pre-push': 'npm run build-types',
+    },
   },
 };
