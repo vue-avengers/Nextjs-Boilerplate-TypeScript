@@ -1,7 +1,7 @@
 import { I18nProvider } from 'next-rosetta';
 import { AppProps } from 'next/app';
 
-import '@styles/main.css';
+import '@/styles/main.css';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (

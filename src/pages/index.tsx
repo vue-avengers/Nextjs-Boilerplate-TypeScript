@@ -1,11 +1,10 @@
 import type { GetStaticProps } from 'next';
 import { useI18n, I18nProps } from 'next-rosetta';
 
-import { PwaAddToHomescreen } from '@components/pwa-add-to-home-screen/pwa-add-to-home-screen';
-import { Meta } from '@layout/Meta';
-import { Main } from '@templates/Main';
-
 import type { MyLocale } from '../i18n';
+import { PwaAddToHomescreen } from '@/components/pwa-add-to-home-screen/pwa-add-to-home-screen';
+import { Meta } from '@/layout/Meta';
+import { Main } from '@/templates/Main';
 
 const Index = () => {
   const i18n = useI18n<MyLocale>();

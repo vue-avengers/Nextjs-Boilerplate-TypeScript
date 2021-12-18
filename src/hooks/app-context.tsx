@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from 'react';
 
-import { IContext } from '@ts/interfaces';
+import { IContext } from '@/ts/interfaces';
 
 const Context = createContext<Partial<IContext>>({});
 
