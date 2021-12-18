@@ -1,5 +1,5 @@
-import HttpApiService from '../api/HttpApiService';
-import { IMortgageLoan } from '../ts/interfaces/mortgageloan.interface';
+import HttpApiService from '@api/HttpApiService';
+import { IMortgageLoan } from '@ts/interfaces/mortgageloan.interface';
 
 const API_BASE = `${process.env.basePath}`;
 

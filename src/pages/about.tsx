@@ -3,9 +3,10 @@ import { useI18n, I18nProps } from 'next-rosetta';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+import { Meta } from '@layout/Meta';
+import { Main } from '@templates/Main';
+
 import type { MyLocale } from '../i18n';
-import { Meta } from '../layout/Meta';
-import { Main } from '../templates/Main';
 
 const About = () => {
   const router = useRouter();

@@ -33,8 +33,27 @@
     "jsx": "preserve",
     "noEmit": true,
     "isolatedModules": true,
-    "incremental": true
+    "incremental": true,
+    "baseUrl": ".",
+
+    "paths": {
+      "@public/*": ["public/*"],
+      "@api/*": ["src/api/*"],
+      "@components/*": ["src/components/*"],
+      "@context/*": ["src/context/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@i18n/*": ["src/i18n/*"],
+      "@layout/*": ["src/layout/*"],
+      "@lib/*": ["src/lib/*"],
+      "@locales/*": ["src/locales/*"],
+      "@pages/*": ["src/pages/*"],
+      "@shared/*": ["src/shared/*"],
+      "@services/*": ["src/services/*"],
+      "@styles/*": ["src/styles/*"],
+      "@templates/*": ["src/templates/*"],
+      "@ts/*": ["src/ts/*"]
+    }
   },
-  "exclude": ["./out/**/*", "./node_modules/**/*",  "e2e"],
+  "exclude": ["./out/**/*", "./node_modules/**/*", "e2e"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "i18n.js"]
 }

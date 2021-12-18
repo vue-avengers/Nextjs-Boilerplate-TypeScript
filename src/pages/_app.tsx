@@ -1,9 +1,9 @@
 import { I18nProvider } from 'next-rosetta';
 import { AppProps } from 'next/app';
 
-import '../styles/main.css';
+import '@styles/main.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <I18nProvider table={pageProps.table /* From getStaticProps */}>
       <Component {...pageProps} />
@@ -11,4 +11,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default CustomApp;

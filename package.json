@@ -14,7 +14,7 @@
     "lint:fix": "yarn lint -- --fix",
     "stylelint": "stylelint ./src/**/*.{css,scss}",
     "stylelint:fix": "stylelint --fix ./src/**/*.{css,scss}",
-    "pretty": "prettier --write --config .prettierrc.json {src,e2e,docs}/**/*.{ts,tsx}",
+    "pretty": "prettier --write --config .prettierrc.json {src,e2e,docs}/**/*.{js,jsx,ts,tsx,json,md}",
     "build-types": "tsc --noEmit --pretty",
     "prepare": "husky install",
     "test": "yarn test:unit && yarn test:e2e",

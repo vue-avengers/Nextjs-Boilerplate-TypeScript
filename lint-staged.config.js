@@ -3,6 +3,6 @@ module.exports = {
   '*.{css,scss}': ['stylelint --fix', 'stylelint'],
   '**/*.ts?(x)': () => 'npm run build-types',
   '*.json': [
-    'prettier --write --config .prettierrc.json {src,e2e,docs}/**/*.{ts,tsx}',
+    'prettier --write --config .prettierrc.json {src,e2e,docs}/**/*.{js,jsx,ts,tsx,json,md}',
   ],
 };
