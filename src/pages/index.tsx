@@ -3,6 +3,7 @@ import { useI18n, I18nProps } from 'next-rosetta';
 
 import type { MyLocale } from '../i18n';
 import { PwaAddToHomescreen } from '@/components/pwa-add-to-home-screen/pwa-add-to-home-screen';
+import { MainLayout } from '@/layout/main-layout';
 import { Meta } from '@/layout/Meta';
 import { Main } from '@/templates/Main';
 
@@ -175,6 +176,10 @@ const Index = () => {
 };
 
 export default Index;
+
+Index.getLayout = function getLayout(page: React.ReactElement) {
+  return <MainLayout>{page}</MainLayout>;
+};
 
 // Server-side code
 export const getStaticProps: GetStaticProps<

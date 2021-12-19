@@ -1,38 +1,27 @@
 import type { GetStaticProps } from 'next';
 import { useI18n, I18nProps } from 'next-rosetta';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import type { MyLocale } from '../i18n';
-import { Meta } from '@/layout/Meta';
-import { Main } from '@/templates/Main';
+import { HomeProvider } from '@/stores/context/home-context';
 
-const About = () => {
+function About() {
   const router = useRouter();
   const i18n = useI18n<MyLocale>();
   const { t } = i18n;
+
+  // const Provider = GlobalProvider();
+
   return (
-    <Main
-      meta={
-        <Meta
-          title="HANGİKREDİ: En Avantajlı Teklifi Bul, Karşılaştır ve Başvur"
-          description="Kredi hesaplama, banka karşılaştırma ve kart başvuru işlemlerini hızlıca yap; kasko ve sigorta tekliflerini hangikredi.com ile hemen gör!"
-        />
-      }
-    >
+    <HomeProvider>
       <h1>{t('about.title')}</h1>
       <p>{t('about.subtitle')}</p>
       <ul>
         {router.locales?.map(loc => (
-          <li key={loc}>
-            <Link href={router.asPath} locale={loc}>
-              <a className={loc === router.locale ? 'is-active' : ''}>{loc}</a>
-            </Link>
-          </li>
+          <li key={loc}></li>
         ))}
       </ul>
       <hr />
-      <Link href="/">Home</Link>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione fuga
         recusandae quidem. Quaerat molestiae blanditiis doloremque possimus
@@ -45,16 +34,25 @@ const About = () => {
         labore voluptatibus distinctio recusandae autem esse explicabo molestias
         officia placeat, accusamus aut saepe.
       </p>
-    </Main>
+    </HomeProvider>
   );
-};
+}
 
 export default About;
+
+// About.getLayout = function getLayout(page: React.ReactElement) {
+//   return <DefaultLayout>{page}</DefaultLayout>;
+// };
+
 // Server-side code
 export const getStaticProps: GetStaticProps<
   I18nProps<MyLocale>
 > = async context => {
   const locale = context.locale || context.defaultLocale;
   const { table = {} } = await import(`../i18n/${locale}`);
-  return { props: { table } }; // Passed to `/pages/_app.tsx`
+  return {
+    props: {
+      table,
+    },
+  }; // Passed to `/pages/_app.tsx`
 };

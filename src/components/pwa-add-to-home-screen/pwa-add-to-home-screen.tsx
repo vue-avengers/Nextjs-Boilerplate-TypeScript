@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from 'react';
 
+import { mortgageLoanApiService } from '../../services';
 import { useAddToHomescreenPrompt } from '@/hooks/use-add-to-home-screen-prompt';
-import { mortgageLoanApiService } from '@/services/mortgage-loan-service';
 
 export function PwaAddToHomescreen() {
   const [prompt, promptToInstall, isInstalled] = useAddToHomescreenPrompt();

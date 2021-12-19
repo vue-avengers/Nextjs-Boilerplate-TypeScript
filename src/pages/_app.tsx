@@ -1,15 +1,28 @@
+import { ReactElement, ReactNode } from 'react';
+
+import { NextPage } from 'next';
 import { I18nProvider } from 'next-rosetta';
 import { AppProps } from 'next/app';
 
-import { GlobalProvider } from '@/stores/context/global-context';
 import '@/styles/main.css';
+import { DefaultLayout } from '@/layout/default-layout';
 
-function GlobalApp({ Component, pageProps }: AppProps) {
+type NextPageWithLayout = NextPage & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+function GlobalApp({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout =
+    Component.getLayout ||
+    ((page: ReactNode) => <DefaultLayout>{page}</DefaultLayout>);
+
   return (
     <I18nProvider table={pageProps.table /* From getStaticProps */}>
-      <GlobalProvider>
-        <Component {...pageProps} />
-      </GlobalProvider>
+      {getLayout(<Component {...pageProps} />)}
     </I18nProvider>
   );
 }
