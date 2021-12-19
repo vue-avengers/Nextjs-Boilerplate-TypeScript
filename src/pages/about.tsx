@@ -3,17 +3,15 @@ import { useI18n, I18nProps } from 'next-rosetta';
 import { useRouter } from 'next/router';
 
 import type { MyLocale } from '../i18n';
-import { HomeProvider } from '@/stores/context/home-context';
+// import { HomeProvider } from '@/stores/context/home-context';
 
 function About() {
   const router = useRouter();
   const i18n = useI18n<MyLocale>();
   const { t } = i18n;
 
-  // const Provider = GlobalProvider();
-
   return (
-    <HomeProvider>
+    <>
       <h1>{t('about.title')}</h1>
       <p>{t('about.subtitle')}</p>
       <ul>
@@ -34,7 +32,7 @@ function About() {
         labore voluptatibus distinctio recusandae autem esse explicabo molestias
         officia placeat, accusamus aut saepe.
       </p>
-    </HomeProvider>
+    </>
   );
 }
 
