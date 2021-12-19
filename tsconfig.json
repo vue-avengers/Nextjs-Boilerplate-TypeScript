@@ -54,6 +54,6 @@
       "@/ts/*": ["src/ts/*"]
     }
   },
-  "exclude": ["./out/**/*", "./node_modules/**/*", "e2e"],
+  "exclude": ["./.next/**/*", "./node_modules/**/*", "e2e"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "i18n.js"]
 }
