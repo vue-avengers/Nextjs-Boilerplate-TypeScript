@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { AppConfig } from '@/shared/utils/AppConfig';
 
 // Need to create a custom _document because i18n support is not compatible with `next export`.
-class CustomDocument extends Document {
+class GlobalDocument extends Document {
   render() {
     return (
       <Html lang={AppConfig.locale}>
@@ -17,4 +17,4 @@ class CustomDocument extends Document {
   }
 }
 
-export default CustomDocument;
+export default GlobalDocument;

@@ -1,14 +1,17 @@
 import { I18nProvider } from 'next-rosetta';
 import { AppProps } from 'next/app';
 
+import { GlobalProvider } from '@/stores/context/global-context';
 import '@/styles/main.css';
 
-function CustomApp({ Component, pageProps }: AppProps) {
+function GlobalApp({ Component, pageProps }: AppProps) {
   return (
     <I18nProvider table={pageProps.table /* From getStaticProps */}>
-      <Component {...pageProps} />
+      <GlobalProvider>
+        <Component {...pageProps} />
+      </GlobalProvider>
     </I18nProvider>
   );
 }
 
-export default CustomApp;
+export default GlobalApp;
