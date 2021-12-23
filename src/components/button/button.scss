@@ -1,0 +1,31 @@
+.button_wrapper {
+  button {
+    background: var(--orange);
+    color: var(--white);
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    height: 40px;
+    display: flex;
+    padding: 12px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    align-self: end;
+  }
+  margin-bottom:0 !important;
+
+  &.type_2 {
+    button {
+      color: var(--orange);
+      border:1px solid var(--orange);
+      background: var(--white);
+      &:hover {
+        background: var(--orange);
+        color:var(--white);
+        border:1px solid var(--orange);
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@ import type { GetStaticProps } from 'next';
 import { useI18n, I18nProps } from 'next-rosetta';
 
 import type { MyLocale } from '../i18n';
+import LoanForm from '@/components/form/loan-form';
 import { PwaAddToHomescreen } from '@/components/pwa-add-to-home-screen/pwa-add-to-home-screen';
 import { MainLayout } from '@/layout/main-layout';
 import { Meta } from '@/layout/Meta';
@@ -10,6 +11,7 @@ import { Main } from '@/templates/Main';
 const Index = () => {
   const i18n = useI18n<MyLocale>();
   const { t } = i18n;
+
   return (
     <Main
       meta={
@@ -171,6 +173,7 @@ const Index = () => {
           Production-ready
         </li>
       </ul>
+      <LoanForm />
     </Main>
   );
 };

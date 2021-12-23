@@ -1,0 +1,80 @@
+.select_wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 15px;
+
+  select {
+    border-radius: 4px;
+    height: 40px;
+    outline: none;
+    border:1px solid var(--darkgray);
+    padding: 12px 8px 12px 12px;
+    -webkit-appearance: none;
+    width: 100%;
+    color: white;
+  }
+
+  label {
+    position:absolute;
+    font-size: 12px;
+    color: var(--darkgray);
+    transition: .3s;
+    left:8px;
+    top: calc(20px - 6px);
+    padding:0 4px;
+    background: var(--white);
+
+    &:before {
+      content: '';
+      background: var(--white);
+    }
+  }
+
+  .select_arrow {
+    position: absolute;
+    right: 8px;
+    top: 9px;}
+
+  &.active {
+    label {
+      top: -8px;
+    }
+
+    select {
+      color: var(--navyblue);
+    }
+  }
+
+  &.focused {
+    .select_arrow {
+      transform: rotateX(-180deg);
+      top:13px;
+    }
+  }
+
+  .icon_wrapper {
+    position: absolute;
+    right: 8px;
+    top: 12px;
+  }
+
+  .error_message {
+    position: absolute;
+    font-size: 12px;
+    line-height: 1.4;
+    padding:4px;
+    bottom: -6px;
+  }
+
+  &.error {
+    select{border: 1px solid var(--bloodred)}
+    select, label, span {
+      color:var(--bloodred);
+    }
+    label {
+      top: -8px;
+    }
+  }
+}

@@ -5,6 +5,9 @@ import { I18nProvider } from 'next-rosetta';
 import { AppProps } from 'next/app';
 
 import '@/styles/main.css';
+import '@/components/input/input.scss';
+import '@/components/input/select.scss';
+import '@/components/button/button.scss';
 import { DefaultLayout } from '@/layout/default-layout';
 
 type NextPageWithLayout = NextPage & {
